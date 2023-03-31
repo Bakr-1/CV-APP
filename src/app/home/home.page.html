@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Child App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<!-- 
+  <ion-card *ngFor="let item of extractedData" (click)="selectobject(item)">
+    <ion-card-header>
+      <ion-card-title>{{item.Object}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+    </ion-card-content>
+  </ion-card> -->
+
+<ion-card>
+  <ion-button expand="block" (click)="takePicture()" color="dark">Take a Picture</ion-button>
+  <ion-button expand="block" (click)="check()" color="dark">check1</ion-button>
+  <img src="{{base64Image}}"/>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>Results</ion-card-header>
+  <ion-item *ngFor="let item of extractedData">
+    {{item.description}}
+  </ion-item>
+</ion-card>
+</ion-content>
